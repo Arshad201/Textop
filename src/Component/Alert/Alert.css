@@ -1,0 +1,12 @@
+.alert{
+    background-color: rgb(0, 172, 0);
+    color: white;
+    font-size: 1.6rem;
+    padding: 1rem;
+    font-family: 'poppins';
+    position: fixed;
+    width: 80%;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

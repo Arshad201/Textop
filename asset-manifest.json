@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Textop/static/css/main.d1500ea2.css",
+    "main.js": "/Textop/static/js/main.cd56e543.js",
+    "index.html": "/Textop/index.html",
+    "main.d1500ea2.css.map": "/Textop/static/css/main.d1500ea2.css.map",
+    "main.cd56e543.js.map": "/Textop/static/js/main.cd56e543.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1500ea2.css",
+    "static/js/main.cd56e543.js"
+  ]
+}

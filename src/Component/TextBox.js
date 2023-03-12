@@ -60,7 +60,7 @@ const TextBox = () => {
         const arr = text.split(" ");
 
         for (var i = 0; i < arr.length; i++) {
-          arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+          arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1).toLowerCase();
       
         }
 
@@ -77,6 +77,53 @@ const TextBox = () => {
       setText(newText.join(" "));
       handleAlert("Extra spaces removed successfully!");
     }
+
+    const countWord =(text)=>{
+
+      const wordArr = text.split(" ");
+
+      let count = 0;
+      for (let i = 0; i < wordArr.length; i++) {
+
+        if(wordArr[i]!==""){
+          count+=1;
+        }
+        
+      }
+      return count;
+    }
+
+    const countchar =(text)=>{
+
+      const charArr = text.split("");
+
+      let count = 0;
+
+      for (let i = 0; i < charArr.length; i++) {
+
+        if(charArr[i]!==" "){
+          count+=1;
+        }
+        
+      }
+      return count;
+    }
+
+    const countSentence =(text)=>{
+
+      const sentenceArr = text.split(".");
+
+      let count = 0;
+      for (let i = 0; i < sentenceArr.length; i++) {
+
+        if(sentenceArr[i].trim().length!==0){
+          count+=1;
+        }
+        
+      }
+      return count;
+      
+    }
   return (
     <>
 
@@ -86,15 +133,15 @@ const TextBox = () => {
     }
     <div className={`topResult  ${theme && 'darkTheme'}`}>
     <span>
-        <b>Words - </b> {text.length===0 ? 0 : text.split(" ").length}
+        <b>Words - </b> {countWord(text)}
         </span>
         <span>
-        <b>Characters - </b>{text.length===0 ? 0 : text.length}
+        <b>Characters - </b>{countchar(text)}
         </span>
         <span>
-        <b>Sentence - </b>{text.length===0 ? 0 : text.split('.').length}
+        <b>Sentence - </b>{countSentence(text)}
         </span>
-    </div>
+    </div> 
     <div className={`textBox`} style={theme ? {border : '1px solid white'} : {}}>
       <textarea value={text} id='textscr' onChange={(e)=>setText(e.target.value)} rows="10" style={theme ? {background : 'blue'} : {}}></textarea>
       <div className="buttons">
